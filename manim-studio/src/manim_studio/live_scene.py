@@ -338,22 +338,7 @@ class Result(%s):
             elif isinstance(value_tracker, IntValueTracker):
                 code += f"\n        self.{name} = IntValueTracker({value_tracker.get_value()})"
             elif isinstance(value_tracker, StringValueTracker):
-<<<<<<< HEAD
                 code += f"\n        self.{name} = StringValueTracker({value_tracker.get_value()})"
-=======
-                code += f"\n        self.{
-                    name} = StringValueTracker({value_tracker.get_value()})"
-            elif isinstance(value_tracker, BytesValueTracker):
-                code += f"\n        self.{
-                    name} = BytesValueTracker({value_tracker.get_value().__repr__()})"
-            elif isinstance(value_tracker, ValueTracker):
-                code += f"\n        self.{
-                    name} = ValueTracker({value_tracker.get_value()})"
-            elif isinstance(value_tracker, Dot):
-                x, y, z = value_tracker.get_center()
-                code += f"\n        self.{
-                    name} = Dot({x} * RIGHT + {y} * UP + {z} * OUT)"
->>>>>>> 798363112929eb99d00f6064df2831708219c353
         return code
 
     def run_instruction(self):

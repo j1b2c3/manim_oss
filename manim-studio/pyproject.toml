@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "manim-studio"
+version = "0.1"
+description = "oss project"
+authors = ["MathLike"]
+readme = "README.md"
+repository = "https://github.com/j1b2c3/manim_oss"
+license = "MIT"
+keywords = ["manim", "gui", "animation", "video", "editor"]
+documentation = "https://github.com/j1b2c3/manim_oss/"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.13"
+manim = ">=0.18.0"
+PyQt6 = ">=6.6.0"
+PyQt6-QScintilla = ">=2.14.1"
+dill = ">=0.3.7"
+pyngrok = ">=7.0.1"
+setuptools = ">=68.2.2"
+openai = {version = ">=1.3.3", optional = true}
+
+[tool.poetry.dev-dependencies]
+furo = ">=2023.9.10"
+sphinxcontrib-video = ">=0.2.0"
+
+[tool.poetry.scripts]
+manim-studio = "manim_studio.__main__:main"
+
+[tool.poetry.extras]
+ai = ["openai"]
+
+[tool.poetry.plugins."manim.plugins"]
+"manim_studio" = "manim_studio"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
